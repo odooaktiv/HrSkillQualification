@@ -10,26 +10,26 @@
 						<page name="hr_skills" string="Skills">
 							<separator string="Technical Skills" />
 							<field name="techskill_ids">
-								<tree editable="Top">
+								<tree editable="top">
 									<field name="tech_id" required="True"/>
 									<field name="levels" required="True"/>
 								</tree>
 								<form>
 									<group col="4">
-										<field name="tech_id"/>
+										<field name="tech_id" />
 										<field name="levels" />
 									</group>
 								</form>
 							</field>
 							<separator string="Non Technical Skills" />
 							<field name="nontechskill_ids">
-								<tree editable="Top">
+								<tree editable="top">
 									<field name="nontech_id" required="True"/>
 									<field name="levels" required="True"/>
 								</tree>
 								<form>
 									<group col="4">
-										<field name="nontech_id"/>
+										<field name="nontech_id" required="True" />
 										<field name="levels" />
 									</group>
 								</form>
@@ -112,31 +112,31 @@
 		
 		<!-- Menu of Qualifications -->
         <menuitem id="qualifications_menu" parent="hr_recruitment.menu_hr_recruitment_configuration" 
-        name="Qualifications" sequence="3" groups="hr.group_hr_manager,hr.group_hr_user"/>
+        name="Qualifications" sequence="3" groups="base.group_hr_manager,base.group_hr_user"/>
         
         <!-- Menu for Degree -->
          <menuitem id="emp_degree_menu" parent="qualifications_menu"
-        action="action_emp_degree" groups="hr.group_hr_manager,hr.group_hr_user"/>
+        action="action_emp_degree" groups="base.group_hr_manager,base.group_hr_user"/>
         
         <!-- Menu for Institute -->
         <menuitem id="menu_hr_institute" parent="menu_qualifications"
-        action="action_hr_institute" groups="hr.group_hr_manager,hr.group_hr_user" sequence="6"/>
+        action="action_hr_institute" groups="base.group_hr_manager,base.group_hr_user" sequence="6"/>
             
         <delete id="hr_recruitment.menu_hr_recruitment_degree" model="ir.ui.menu"/>
         
         <!-- Menu for Certifications -->
         <menuitem id="emp_cert_menu" parent="qualifications_menu" 
-        action="action_emp_cert" groups="hr.group_hr_manager,hr.group_hr_user"/>
+        action="action_emp_cert" groups="base.group_hr_manager,base.group_hr_user"/>
         
         <!-- Menu item for Skills -->
         <menuitem id="skills_menu" parent="hr_recruitment.menu_hr_recruitment_configuration" 
-        name="Skills" sequence="4" groups="hr.group_hr_manager,hr.group_hr_user"/>
+        name="Skills" sequence="4" groups="base.group_hr_manager,base.group_hr_user"/>
         
         <!-- Menu for Non-Technical Skills -->
         <menuitem id="nontech_skills_menu" parent="skills_menu"
-        action="action_nontech_skills" groups="hr.group_hr_manager,hr.group_hr_user"/> 
+        action="action_nontech_skills" groups="base.group_hr_manager,base.group_hr_user"/> 
         
         <!-- Menu for Technical Skills -->
         <menuitem id="tech_skills_menu" parent="skills_menu" action="action_tech_skills"
-         groups="hr.group_hr_manager,hr.group_hr_user"/>   
+         groups="base.group_hr_manager,base.group_hr_user"/>   
 </odoo>

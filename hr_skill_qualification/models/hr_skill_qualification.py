@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api,fields,models,_
+from openerp import api,fields,models,_
 from datetime import datetime
-from odoo.exceptions import UserError, ValidationError  
+from openerp.exceptions import UserError, ValidationError  
 
 
 class HrEmployee(models.Model):
@@ -90,8 +90,8 @@ class NontechNontech(models.Model):
         if tech_skill:
             raise UserError(_('You are trying to delete a Skill which is referenced by an Employee.'))
         return super(NontechNontech, self).unlink()
-
-
+        
+    
 class EmployeeEducation(models.Model):
     
     _name = 'employee.education'
@@ -230,3 +230,19 @@ class HrApplicant(models.Model):
             dict_act_window['res_id'] = employee.id
         dict_act_window['view_mode'] = 'form,tree'
         return dict_act_window
+            
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+    

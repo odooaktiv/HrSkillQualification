@@ -5,31 +5,31 @@
 		<field name="model">hr.employee</field>
 		<field name="inherit_id" ref="hr.view_employee_form"/>
 		<field name="arch" type="xml">
-			<xpath expr="//form/sheet/notebook/page[@name='hr_settings']" position="after">
+			<xpath expr="//form/sheet/notebook/page[last()]" position="after">
 				<page name="hr_skills" string="Skills">
 					<separator string="Technical Skills"/>
 					<field name="techskill_ids">
-					<tree editable="Top">
+					<tree editable="top">
 					   <field name="tech_id" required="True"/>
                        <field name="levels" required="True"/>   
 					</tree>
 					<form>
 					   <group col="4">
-                           <field name="tech_id"/>
-                           <field name="levels"/>					    
+                           <field name="tech_id" />
+                           <field name="levels" />					       
 					   </group>
 					</form>
 					</field>
 					<separator string="Non Technical Skills"/>
 					<field name="nontechskill_ids">
-					   <tree editable="Top">
+					   <tree editable="top">
 					       <field name="nontech_id" required="True"/>
 					       <field name="levels" required="True"/>
 					   </tree>
 					   <form>
 					       <group col="4">
-					           <field name="nontech_id"/>
-					           <field name="levels"/>
+					           <field name="nontech_id" required="True"/>
+					           <field name="levels" required="True"/>
 					       </group>
 					   </form>
 					</field>
@@ -276,34 +276,34 @@
             id="hr.menu_human_resources_configuration"
             name="Configuration"
             parent="hr.menu_hr_root"
-            groups="hr.group_hr_manager,hr.group_hr_user"
+            groups="base.group_hr_manager,base.group_hr_user"
             sequence="100"/>
             
     <!-- Menu item for Skills -->
     <menuitem id="menu_skills" parent="hr.menu_human_resources_configuration" 
-    name="Skills" groups="hr.group_hr_manager,hr.group_hr_user" sequence="1"/>
+    name="Skills" groups="base.group_hr_manager,base.group_hr_user" sequence="1"/>
     
     <!-- Menu for Technical Skills -->
     <menuitem id="menu_tech_skills" parent="menu_skills" action="action_tech_skills" 
-    groups="hr.group_hr_manager,hr.group_hr_user" sequence="2"/> 
+    groups="base.group_hr_manager,base.group_hr_user" sequence="2"/> 
     
     <!-- Menu for Non-Technical Skills -->
     <menuitem id="menu_nontech_skills" parent="menu_skills"
-     action="action_nontech_skills" groups="hr.group_hr_manager,hr.group_hr_user" sequence="3"/>
+     action="action_nontech_skills" groups="base.group_hr_manager,base.group_hr_user" sequence="3"/>
     
     <!-- Menu of Qualifications -->
     <menuitem id="menu_qualifications" parent="hr.menu_human_resources_configuration" 
-    name="Qualifications" groups="hr.group_hr_manager,hr.group_hr_user" sequence="4"/>
+    name="Qualifications" groups="base.group_hr_manager,base.group_hr_user" sequence="4"/>
     
     <!-- Menu for Degree -->
     <menuitem id="menu_emp_degree" parent="menu_qualifications"
-    action="action_emp_degree" groups="hr.group_hr_manager,hr.group_hr_user" sequence="5"/>
+    action="action_emp_degree" groups="base.group_hr_manager,base.group_hr_user" sequence="5"/>
     
     <!-- Menu for Institute -->
     <menuitem id="menu_hr_institute" parent="menu_qualifications"
-    action="action_hr_institute" groups="hr.group_hr_manager,hr.group_hr_user" sequence="6"/>
+    action="action_hr_institute" groups="base.group_hr_manager,base.group_hr_user" sequence="6"/>
      
     <!-- Menu for Certifications -->
     <menuitem id="menu_emp_cert" parent="menu_qualifications" 
-    action="action_emp_cert" groups="hr.group_hr_manager,hr.group_hr_user" sequence="7"/>
+    action="action_emp_cert" groups="base.group_hr_manager,base.group_hr_user" sequence="7"/>
 </odoo>
