@@ -18,7 +18,8 @@
         'views/hr_employee_skill_qualification_views.xml',
         'views/hr_applicant_skill_qualification.xml'
         ],
-    
+
+    'images':  ['static/description/banner.jpg'],
     'auto_install':False,
     'installable':True,
     'application':False    
