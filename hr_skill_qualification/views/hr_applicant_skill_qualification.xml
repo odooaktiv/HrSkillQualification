@@ -85,8 +85,8 @@
 									<group col="4">
 										<field name="job_id" required="True" />
 										<field name="location" />
-										<field name="from_date" />
-										<field name="to_date" />
+										<field name="from_date" required="True" />
+										<field name="to_date" required="True" />
 										<field name="doc" />
 									</group>
 								</form>
@@ -121,8 +121,6 @@
         <!-- Menu for Institute -->
         <menuitem id="menu_hr_institute" parent="menu_qualifications"
         action="action_hr_institute" groups="hr.group_hr_manager,hr.group_hr_user" sequence="6"/>
-            
-        <delete id="hr_recruitment.menu_hr_recruitment_degree" model="ir.ui.menu"/>
         
         <!-- Menu for Certifications -->
         <menuitem id="emp_cert_menu" parent="qualifications_menu" 

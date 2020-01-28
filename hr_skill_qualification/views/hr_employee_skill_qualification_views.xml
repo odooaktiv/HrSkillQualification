@@ -5,7 +5,7 @@
 		<field name="model">hr.employee</field>
 		<field name="inherit_id" ref="hr.view_employee_form"/>
 		<field name="arch" type="xml">
-			<xpath expr="//form/sheet/notebook/page[@name='hr_settings']" position="after">
+			<xpath expr="//notebook" position="inside">
 				<page name="hr_skills" string="Skills">
 					<separator string="Technical Skills"/>
 					<field name="techskill_ids">
@@ -84,8 +84,8 @@
                              <group col="4">
                                  <field name="job_id" required="True"/>
 	                             <field name="location"/>
-	                             <field name="from_date"/>
-	                             <field name="to_date"/>
+	                             <field name="from_date" required="True"/>
+	                             <field name="to_date" required="True"/>
 	                             <field name="doc"/>
                              </group>
                          </form>

@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-import hr_skill_qualification
+from . import hr_skill_qualification
