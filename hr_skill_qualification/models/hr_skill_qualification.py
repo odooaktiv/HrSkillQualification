@@ -2,10 +2,10 @@
 
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError
+from datetime import date
 
 
 class HrEmployee(models.Model):
-
     _inherit = 'hr.employee'
 
     techskill_ids = fields.One2many(
@@ -21,8 +21,8 @@ class HrEmployee(models.Model):
 
 
 class EmployeeTechSkills(models.Model):
-
     _name = 'emp.tech.skills'
+    _description = 'Employee Tech Skills'
 
     applicant_id = fields.Many2one('hr.applicant', 'applicant')
     employee_id = fields.Many2one('hr.employee', 'Employee')
@@ -34,8 +34,8 @@ class EmployeeTechSkills(models.Model):
 
 
 class TechTech(models.Model):
-
     _name = 'tech.tech'
+    _description = 'Tech Tech'
 
     name = fields.Char()
     sequence = fields.Integer("Sequence")
@@ -63,8 +63,8 @@ class TechTech(models.Model):
 
 
 class EmployeeNonTechSkills(models.Model):
-
     _name = 'emp.nontech.skills'
+    _description = 'Employee Non Tech Skills'
 
     applicant_id = fields.Many2one('hr.applicant', 'Applicant')
     employee_id = fields.Many2one('hr.employee', 'Employee')
@@ -76,8 +76,8 @@ class EmployeeNonTechSkills(models.Model):
 
 
 class NontechNontech(models.Model):
-
     _name = 'nontech.nontech'
+    _description = 'Nontech Nontech'
 
     name = fields.Char()
     sequence = fields.Integer("Sequence")
@@ -106,8 +106,8 @@ class NontechNontech(models.Model):
 
 
 class EmployeeEducation(models.Model):
-
     _name = 'employee.education'
+    _description = 'Employee Education'
 
     applicant_id = fields.Many2one('hr.applicant', 'applicant')
     employee_id = fields.Many2one('hr.employee', 'Employee')
@@ -121,8 +121,8 @@ class EmployeeEducation(models.Model):
 
 
 class HrInstitute(models.Model):
-
     _name = 'hr.institute'
+    _description = 'Hr Institute'
 
     name = fields.Char()
     country_id = fields.Many2one('res.country', 'Country')
@@ -130,7 +130,6 @@ class HrInstitute(models.Model):
 
 
 class RecruitmentDegree(models.Model):
-
     _inherit = "hr.recruitment.degree"
 
     name = fields.Char("Degree")
@@ -146,8 +145,8 @@ class RecruitmentDegree(models.Model):
 
 
 class EmployeeCertification(models.Model):
-
     _name = 'employee.certification'
+    _description = 'Employee Certification'
 
     applicant_id = fields.Many2one('hr.applicant', 'applicant')
     employee_id = fields.Many2one('hr.employee', 'Employee')
@@ -158,8 +157,8 @@ class EmployeeCertification(models.Model):
 
 
 class CertCert(models.Model):
-
     _name = 'cert.cert'
+    _description = 'Cert Cert'
 
     name = fields.Char('Course Name')
     sequence = fields.Integer("Sequence")
@@ -172,8 +171,8 @@ class CertCert(models.Model):
 
 
 class EmployeeProfession(models.Model):
-
     _name = 'employee.profession'
+    _description = 'Employee Profession'
 
     applicant_id = fields.Many2one('hr.applicant', 'applicant')
     employee_id = fields.Many2one('hr.employee', 'Employee')
@@ -196,15 +195,15 @@ class EmployeeProfession(models.Model):
         --------------------------------------------------------
         @param self : object pointer
         """
-        date = fields.Datetime.now()
-        if (self.from_date > date) or (self.to_date > date):
+        # date = fields.Datetime.now()
+        today = date.today()
+        if (self.from_date > today) or (self.to_date > today):
             raise ValidationError(
                 'Future Start Date or End Date \
                 in Professional experience is not acceptable!!')
 
 
 class HrApplicant(models.Model):
-
     _inherit = 'hr.applicant'
 
     techskill_ids = fields.One2many(
