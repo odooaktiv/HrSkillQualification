@@ -127,7 +127,6 @@
         <field name="name">Technical Skills</field>
         <field name="res_model">tech.tech</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
     </record>
     
     
@@ -162,7 +161,6 @@
         <field name="name">Non Technical Skills</field>
         <field name="res_model">nontech.nontech</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
     </record>
     
     
@@ -197,7 +195,6 @@
         <field name="name">Degrees</field>
         <field name="res_model">hr.recruitment.degree</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
     </record>
     
     <!-- Form view of Institutes -->
@@ -233,7 +230,6 @@
         <field name="name">Institute</field>
         <field name="res_model">hr.institute</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
     </record>
     
     <!-- Form view of Employee Certification -->
@@ -267,7 +263,6 @@
         <field name="name">Certifications</field>
         <field name="res_model">cert.cert</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_type">form</field>
     </record>
     
     

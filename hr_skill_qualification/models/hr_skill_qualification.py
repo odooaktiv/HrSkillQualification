@@ -46,7 +46,6 @@ class TechTech(models.Model):
         ('seq_uniq', 'unique (sequence)', "Sequence name already exists!")
     ]
 
-    @api.multi
     def unlink(self):
         """
         his method is called user tries to delete a skill which
@@ -88,7 +87,6 @@ class NontechNontech(models.Model):
         ('seq_uniq', 'unique (sequence)', "Sequence name already exists!")
     ]
 
-    @api.multi
     def unlink(self):
         """
         This method is called user tries to delete a skill which
@@ -184,8 +182,7 @@ class EmployeeProfession(models.Model):
 
     _sql_constraints = [
         ('to_date_greater', 'check(to_date > from_date)',
-         'Start Date of Professional Experience \
-         should be less than End Date!'),
+         'Start Date of Professional Experience should be less than End Date!'),
     ]
 
     @api.constrains('from_date', 'to_date')
@@ -217,7 +214,6 @@ class HrApplicant(models.Model):
     profession_ids = fields.One2many(
         'employee.profession', 'applicant_id', 'Professional Experience')
 
-    @api.multi
     def create_employee_from_applicant(self):
         """ Create an hr.employee from the hr.applicants """
         employee = False
