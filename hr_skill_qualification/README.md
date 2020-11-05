@@ -1,4 +1,4 @@
-Odoo 13.0 (Community Edition) 
+Odoo 14.0 (Community Edition) 
 
 Installation 
 ============

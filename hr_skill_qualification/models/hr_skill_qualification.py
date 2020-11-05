@@ -38,13 +38,6 @@ class TechTech(models.Model):
     _description = 'Tech Tech'
 
     name = fields.Char()
-    sequence = fields.Integer("Sequence")
-
-    _sql_constraints = [
-        ('tech_unique', 'unique (name)',
-         'The name of the Technologies already exixts!'),
-        ('seq_uniq', 'unique (sequence)', "Sequence name already exists!")
-    ]
 
     def unlink(self):
         """
@@ -79,13 +72,6 @@ class NontechNontech(models.Model):
     _description = 'Nontech Nontech'
 
     name = fields.Char()
-    sequence = fields.Integer("Sequence")
-
-    _sql_constraints = [
-        ('nontech_unique', 'unique (name)',
-         'The name of the Non Technical skills must be unique!'),
-        ('seq_uniq', 'unique (sequence)', "Sequence name already exists!")
-    ]
 
     def unlink(self):
         """
@@ -127,21 +113,6 @@ class HrInstitute(models.Model):
     state_id = fields.Many2one('res.country.state', 'State')
 
 
-class RecruitmentDegree(models.Model):
-    _inherit = "hr.recruitment.degree"
-
-    name = fields.Char("Degree")
-    sequence = fields.Integer(
-        "Sequence", default=1, help="Gives the sequence \
-        order when displaying a list of degrees.")
-
-    _sql_constraints = [
-        ('name_uniq', 'unique (name)',
-         'The name of the Degree of Recruitment must be unique!'),
-        ('seq_uniq', 'unique (sequence)', "Sequence name already exists!")
-    ]
-
-
 class EmployeeCertification(models.Model):
     _name = 'employee.certification'
     _description = 'Employee Certification'
@@ -159,13 +130,6 @@ class CertCert(models.Model):
     _description = 'Cert Cert'
 
     name = fields.Char('Course Name')
-    sequence = fields.Integer("Sequence")
-
-    _sql_constraints = [
-        ('cert_unique', 'unique (name)',
-         'The name of the Certifications must be unique!'),
-        ('seq_uniq', 'unique (sequence)', "Sequence name already exists!")
-    ]
 
 
 class EmployeeProfession(models.Model):

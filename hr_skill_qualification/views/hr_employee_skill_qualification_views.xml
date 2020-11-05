@@ -103,8 +103,7 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="name" required="True"/> 
-                    <field name="sequence"/>   
+                    <field name="name" required="True"/>
                 </group>
             </form>
         </field>
@@ -115,9 +114,8 @@
         <field name="name">view.tech.tech.tree</field>
         <field name="model">tech.tech</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="sequence"/>
+            <tree editable="bottom">
+                <field name="name" required="1"/>
             </tree>
         </field>
     </record>
@@ -138,7 +136,6 @@
             <form>
                 <group>
                     <field name="name" required="True"/> 
-                    <field name="sequence"/>   
                 </group>
             </form>
         </field>
@@ -149,9 +146,8 @@
         <field name="name">view.nontech.nontech.tree</field>
         <field name="model">nontech.nontech</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="sequence"/>
+            <tree editable="bottom">
+                <field name="name" required="1"/>
             </tree>
         </field>
     </record>
@@ -161,33 +157,6 @@
         <field name="name">Non Technical Skills</field>
         <field name="res_model">nontech.nontech</field>
         <field name="view_mode">tree,form</field>
-    </record>
-    
-    
-    <!-- Form view of Educational Qualification -->
-    <record id="view_emp_degree_form" model="ir.ui.view">
-        <field name="name">view.emp.degree.form</field>
-        <field name="model">hr.recruitment.degree</field>
-        <field name="arch" type="xml">
-            <form>
-                <group>
-                    <field name="name" required="True"/>
-                    <field name="sequence"/> 
-                </group>
-            </form>
-        </field>
-    </record>
-    
-    <!-- Tree view of Educational Qualification -->
-    <record id="hr_recruitment.hr_recruitment_degree_tree" model="ir.ui.view">
-        <field name="name">view.emp.degree.tree</field>
-        <field name="model">hr.recruitment.degree</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="sequence"/>
-            </tree>
-        </field>
     </record>
     
     <!-- Action of Educational Qualification -->
@@ -239,8 +208,7 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="name" required="True"/>
-                    <field name="sequence"/>    
+                    <field name="name" required="True"/> 
                 </group>
             </form>
         </field>
@@ -251,9 +219,8 @@
         <field name="name">view.emp.cert.tree</field>
         <field name="model">cert.cert</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="sequence"/>
+            <tree editable="bottom">
+                <field name="name" required="1"/>
             </tree>
         </field>
     </record>
@@ -292,7 +259,7 @@
     
     <!-- Menu for Degree -->
     <menuitem id="menu_emp_degree" parent="menu_qualifications"
-    action="action_emp_degree" groups="hr.group_hr_manager,hr.group_hr_user" sequence="5"/>
+    action="hr_recruitment.hr_recruitment_degree_action" groups="hr.group_hr_manager,hr.group_hr_user" sequence="5"/>
     
     <!-- Menu for Institute -->
     <menuitem id="menu_hr_institute" parent="menu_qualifications"

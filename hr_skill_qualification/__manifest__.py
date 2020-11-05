@@ -3,7 +3,7 @@
 {
     'name': 'Employee Skills and Qualifications',
     'category': 'Generic Modules/Human Resources',
-    'version': '13.0.1.0.0',
+    'version': '14.0.1.0.0',
     'summary': 'This module will adds a configuration for skills and qualification of employee.',
     'website': 'http://www.aktivsoftware.com',
     'author': 'Aktiv Software',
